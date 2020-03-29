@@ -1,0 +1,38 @@
+python Function:
+---------------
+1.Function concepts: what is function ?
+Ans: 
+
+simple function syntax:
+	def functio_name(parameters):
+		'''doc string'''
+		....logic.....
+		return value
+	call the function
+===============================		
+example:
+	def wish(name):
+		print('hello',name,'gudmrng')
+	wish('krishna')
+	wish('hari')
+-------------------------------------------
+NOTE:In python overloading concepts is not avilable in python.
+---------------------------------------------------------------
+def add(x,y):
+    print('sum of 2 numbers: ',x+y)
+    
+def add(x,y,z):
+        print('sum of 3 numbers: ',x+y+z)
+
+add(356,567)
+add(345,567,6)
+=====================================================
+Error:
+= RESTART: /Users/krishnar/GD/git_folder_20-03-2020/function.py
+Traceback (most recent call last):
+  File "/Users/krishnar/GD/git_folder_20-03-2020/function.py", line 7, in <module>
+    add(356,567)
+TypeError: add() missing 1 required positional argument: 'z'
+---------=======================================================
+
+

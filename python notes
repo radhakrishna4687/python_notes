@@ -1,0 +1,19 @@
+python Function:
+---------------
+1.Function concepts: what is function ?
+Ans: 
+
+simple function syntax:
+	def functio_name(parameters):
+		'''doc string'''
+		....logic.....
+		return value
+	call the function
+===============================		
+example:
+	def wish(name):
+		print('hello',name,'gudmrng')
+	wish('krishna')
+	wish('hari')
+-------------------------------------------
+
