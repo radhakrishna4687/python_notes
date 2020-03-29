@@ -35,5 +35,15 @@ Traceback (most recent call last):
 TypeError: add() missing 1 required positional argument: 'z'
 ---------=======================================================
 date:29-03-2020
+==================
+##wite afunction the given number is even or odd number
+#define afunction
+def even_odd(x):
+    if x%2==0:
+        print('The given number is even: ',x)
+    else:
+        print('The given number is odd: ',x)
+m=even_odd(int(input('Enter the number: ',)))
+------------------------------------------------------
 
 
