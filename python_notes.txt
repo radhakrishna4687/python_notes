@@ -45,5 +45,15 @@ def even_odd(x):
         print('The given number is odd: ',x)
 m=even_odd(int(input('Enter the number: ',)))
 ------------------------------------------------------
-
+Another example:
+#wite afunction the given number is even or odd number
+#define afunction
+def even_odd(x,y):
+    z=x-y #z=x+y #z=x*y
+    if z%2==0:
+        print('The given number is even: ',z)
+    else:
+        print('The given number is odd: ',z)
+m=even_odd(12,34)
+------------------------------------------------
 
