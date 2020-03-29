@@ -70,5 +70,55 @@ for i in range(1,12):
     print('THE FACTORIAL OF {} IS {}'.format(i,fact(i)))
     
 ======================================    
-
+NOTE: IN python there are 'n' number of 'return' values allowed,but in compare to another language not their.
+=================================================================
+example:
+def sum_sub(x,y):
+    sum=x+y
+    sub=x-y
+    return sum,sub
+a,b=sum_sub(123,456)#) #in the form of tuple store, tuple unpacking
+print('The sum value is: ',a)
+print('The sub value is : ',b)
+ ================================================================= def cal(x,y):
+    sum=x+y
+    sub=x-y
+    mul=x*y
+    div=x/y
+    return sum,sub,mul,div 
+t=cal(199,4)
+print('The result are: ')
+for i in t:
+    print(i)
+============================
+def cal(x,y): ==> Formal Parameters
+    sum=x+y
+    sub=x-y
+    mul=x*y
+    div=x/y
+    return sum,sub,mul,div  #####in Tuple unpacking thers is 4 valus is there and then there to declare the variable also 4 only.
+a,b,c,d=cal(199,4) ===>>Actual arguments
+print('The result are: ')
+for i in t:
+    print(i)
+  NOTE: sum,sub,mul,div=a,b,c,d  
+========================================
+there are fcatagiers of arguments 
+1.positionalArgumrnts
+2.Keyword arguments
+3.Defalut argumenys
+4.Variable laength arguments
+---------------------------
+positional arguments example:
+1. def cal(x,y):
+		print('the summ of two numbers',a+b)
+	cal(10,3)
+	#here the positional argument of a=10,and b=3
+================================================
+2.keyword argguments;
+def sub(a,b):
+		print(a-b)
+sub(a=24,b=40)
+#here Keyword argunts are define by the values to beassing them
+a=10,b=3 like this		
 
