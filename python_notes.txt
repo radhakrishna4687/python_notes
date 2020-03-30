@@ -121,4 +121,19 @@ def sub(a,b):
 sub(a=24,b=40)
 #here Keyword argunts are define by the values to beassing them
 a=10,b=3 like this		
+================================================
+34 session python
+#Default Arguments
+example:
+#default arguments
+def wish(name='Guest'): # name=guest is defalut value
+   print('Hello',name,'gud Evng')
+wish()
+=========================
+Note; 1.Alawys forst positional arggurmnets and at last keyword argumnents
+2.Defalut argumnets examples: mainum balnace in account it is fixed one.
+3.If we decaling the defalult arguments should be Atlast arguments
+================================================
+
+
 
