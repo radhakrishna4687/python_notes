@@ -132,7 +132,7 @@ wish()
 =========================
 Note; 1.Alawys forst positional arggurmnets and at last keyword argumnents
 2.Defalut argumnets examples: mainum balnace in account it is fixed one.
-3.If we decaling the defalult arguments should be Atlast arguments
+3.If we decaling the defalult arguments should be Atlast arguments to declare.
 ================================================
 
 

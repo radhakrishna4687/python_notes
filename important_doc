@@ -1,0 +1,64 @@
+How to pull the docker images and run the continers with ports documentaions.
+
+websites: jenkins 
+
+https://github.com/jenkinsci/docker/blob/master/README.md
+
+Step1:--> pull the docker jenkins images from docker hub 
+Step2:-->once pull the docker images to run the images 
+    By using these 
+  --> cmd: 
+
+          docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+
+     NOTE: read below the build executors part for the role of the 50000 port mapping.
+
+This will store the workspace in /var/jenkins_home. All Jenkins data lives in there - including plugins and configuration. You will probably want to make that an explicit volume so you can manage it and attach to another container for upgrades :
+
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts     
+                           
+                           or 
+  This will store the workspace in /var/jenkins_home. All Jenkins data lives in there - including plugins and configuration. You will probably want to make that a persistent volume (recommended):
+
+  this will automatically create a 'jenkins_home' docker volume on the host machine, that will survive the container stop/restart/deletion.
+
+NOTE: Avoid using a bind mount from a folder on the host machine into /var/jenkins_home, as this might result in file permission issues (the user used inside the container might not have rights to the folder on the host machine). If you really need to bind mount jenkins_home, ensure that the directory on the host is accessible by the jenkins user inside the container (jenkins user - uid 1000) or use -u some_other_user parameter with docker run.
+  
+  cmd:
+
+      docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+
+ This will store the jenkins data in /your/home on the host. Ensure that /your/home is accessible by the jenkins user in container (jenkins user - uid 1000) or use -u some_other_user parameter with docker run. 
+
+ this will run Jenkins in detached mode with port forwarding and volume added. You can access logs with command 'docker logs CONTAINER_ID' in order to check first login token. ID of container will be returned from output of command above.
+ 
+
+ You can also use a volume container:
+
+    cmd:
+
+    docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home jenkins
+Then myjenkins container has the volume (please do read about docker volume handling to find out more). 
+ 
+Web sites: docker volumes
+
+
+https://medium.com/bb-tutorials-and-thoughts/understanding-docker-volumes-with-an-example-d898cb5e40d7 
+
+
+Attaching build executors
+You can run builds on the master out of the box.
+
+But if you want to attach build slave servers through JNLP (Java Web Start): make sure you map the port: -p 50000:50000 - which will be used when you connect a slave agent.
+
+If you are only using SSH slaves, then you do NOT need to put that port mapping.
+
+
+https://medium.com/@karthi.net/docker-tutorial-build-docker-images-using-jenkins-d2880e65b74
+
+https://stackoverflow.com/questions/33272054/how-can-i-get-docker-container-roots-password
+
+https://www.youtube.com/watch?v=iN3he0eVUyw
+  
+
+

@@ -1,6 +1,10 @@
-import boto3
-ec2=boto3.resource('ec2')
-#create vpc
-ip=input('Enter the CIDRBLOCK ip address : ')
-vpc=ec2.create_vpc(ip)
-
+def cal(x,y):
+    sum=x+y
+    sub=x-y
+    mul=x*y
+    div=x/y
+    return sum,sub,mul,div
+t=cal(199,4)
+print('The result are: ')
+for i in t:
+    print(i)
